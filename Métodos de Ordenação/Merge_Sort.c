@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int contadorMerge = 0;  // Contador de Operações
+
 // Função que faz a Intercalação (Merge)
 // O(n)
 void merge(int vetor[], int esquerda, int meio, int direita) {
@@ -74,12 +76,14 @@ int main() {
         scanf("%d",&vetor[i]);
     }
 
-    printf("Vetor Original V = ");
+    printf("\nVetor Original V = ");
     print_vetor(vetor,N);
 
     mergeSort(vetor,0,N-1);
     printf("\nVetor Ordenado: V = ");
     print_vetor(vetor,N);
+
+    printf("\nNúmero de Comparações: %d",contadorMerge);
   
     return 0;
 }
